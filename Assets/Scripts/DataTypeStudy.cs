@@ -5,25 +5,25 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// ÀÚ·áÇü°ú Çüº¯È¯¿¡ ´ëÇÑ ½ºÅÍµð Å¬·¡½º ÀÔ´Ï´Ù.
+/// ìžë£Œí˜•ê³¼ í˜•ë³€í™˜ì— ëŒ€í•œ ìŠ¤í„°ë”” í´ëž˜ìŠ¤ ìž…ë‹ˆë‹¤..
 /// </summary>
 
 
 public class DataTypeStudy : MonoBehaviour
 {
-    //°ª(Value)Çü º¯¼ö
-    //ÀÚ·áÇü  º¯¼ö¸í      °ª
-    bool    isEnable    = false; // 1Byte, True/FalseÀÇ °ª
-    int     number      = 100; // 4Byte(32bit), Á¤¼öÇü ÀÚ·áÇü ÃÖ´ë 0~4, 294, 967, 295 or -2, 147, 483, 648~2, 147, 483, 647
-    uint    numberUInt  = 4294967285; // 4Byte(32bit), ºÎÈ£°¡ ¾ø´Â Á¤¼öÇü ÀÚ·áÇü, ÃÖ´ë 0~4, 294, 967, 295
-    float   number2     = 35.3f; // 4Byte, ½Ç¼öÇü ÀÚ·áÇü
-    double  number3     = 35.5; // 8Byte(64bit), ½Ç¼öÇü ÀÚ·áÇü
-    char    data        = 'c'; // 1Byte, 1°³ÀÇ ¹®ÀÚ¸¦ ÀúÀåÇÏ´Â ÀÚ·áÇü
-    string  name        = "Hyeongmin"; // ¹®ÀÚ¿­, ¹®ÀÚÀÇ Å©±â¿¡ µû¶ó Å©±â°¡ º¯ÇÏ´Â ÀÚ·áÇü
+    //ê°’(Value)í˜• ë³€ìˆ˜
+    //ìžë£Œí˜•  ë³€ìˆ˜ëª…      ê°’
+    bool    isEnable    = false; // 1Byte, True/Falseì˜ ê°’
+    int     number      = 100; // 4Byte(32bit), ì •ìˆ˜í˜• ìžë£Œí˜• ìµœëŒ€ 0~4, 294, 967, 295 or -2, 147, 483, 648~2, 147, 483, 647
+    uint    numberUInt  = 4294967285; // 4Byte(32bit), ë¶€í˜¸ê°€ ì—†ëŠ” ì •ìˆ˜í˜• ìžë£Œí˜•, ìµœëŒ€ 0~4, 294, 967, 295
+    float   number2     = 35.3f; // 4Byte, ì‹¤ìˆ˜í˜• ìžë£Œí˜•
+    double  number3     = 35.5; // 8Byte(64bit), ì‹¤ìˆ˜í˜• ìžë£Œí˜•
+    char    data        = 'c'; // 1Byte, 1ê°œì˜ ë¬¸ìžë¥¼ ì €ìž¥í•˜ëŠ” ìžë£Œí˜•
+    string  name        = "Hyeongmin"; // ë¬¸ìžì—´, ë¬¸ìžì˜ í¬ê¸°ì— ë”°ë¼ í¬ê¸°ê°€ ë³€í•˜ëŠ” ìžë£Œí˜•
 
-    int number4; // °ªÀ» ÇÒ´çÇÏÁö ¾ÊÀ¸¸é ÀÚµ¿À¸·Î 0À¸·Î ÃÊ±âÈ­
+    int number4; // ê°’ì„ í• ë‹¹í•˜ì§€ ì•Šìœ¼ë©´ ìžë™ìœ¼ë¡œ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 
-    const int age = 20; // »ó¼ö: ÀÐ±âÀü¿ë, runtime½Ã °ªÀ» º¯°æÇÏÁö ¸øÇÔ 
+    const int age = 20; // ìƒìˆ˜: ì½ê¸°ì „ìš©, runtimeì‹œ ê°’ì„ ë³€ê²½í•˜ì§€ ëª»í•¨ 
 
     // Start is called before the first frame update
     void Start()
@@ -32,25 +32,25 @@ public class DataTypeStudy : MonoBehaviour
         print(typeof(bool));
         print(number4);
 
-        // age = 60; // »ó¼ö·Î runtime½Ã °ªÀ» º¯°æÇÏÁö ¸øÇÔ
+        // age = 60; // ìƒìˆ˜ë¡œ runtimeì‹œ ê°’ì„ ë³€ê²½í•˜ì§€ ëª»í•¨
 
-// Çüº¯È¯ = Type Casting
+// í˜•ë³€í™˜ = Type Casting
         int myInt = 10;
         double myDouble = 55.4;
 
-// ¹æ½Ä1. ¾Ï½ÃÀû, ¸í½ÃÀû Çüº¯È¯
-        myDouble = myInt;           // ¾Ï½ÃÀû Çüº¯È¯
-        // myInt = myDouble;        // ¾Ï½ÃÀû Çüº¯È¯ ºÒ°¡: myDoubleÀÇ Å©±â°¡ ´õ Å©±â ¶§¹®¿¡
-        myInt = (int)myDouble;      // ¸í½ÃÀû Çüº¯È¯: Å©±â°¡ Å« º¯¼ö¸¦ Å©±â°¡ ÀÛÀº º¯¼ö·Î º¯È¯
+// ë°©ì‹1. ì•”ì‹œì , ëª…ì‹œì  í˜•ë³€í™˜
+        myDouble = myInt;           // ì•”ì‹œì  í˜•ë³€í™˜
+        // myInt = myDouble;        // ì•”ì‹œì  í˜•ë³€í™˜ ë¶ˆê°€: myDoubleì˜ í¬ê¸°ê°€ ë” í¬ê¸° ë•Œë¬¸ì—
+        myInt = (int)myDouble;      // ëª…ì‹œì  í˜•ë³€í™˜: í¬ê¸°ê°€ í° ë³€ìˆ˜ë¥¼ í¬ê¸°ê°€ ìž‘ì€ ë³€ìˆ˜ë¡œ ë³€í™˜
 
-// ¹æ½Ä2. Çüº¯È¯ ³»Àå ¸Þ¼­µå
-        myInt.ToString();       // intÇü º¯¼ö -> stringÇü º¯¼ö·Î º¯È¯
+// ë°©ì‹2. í˜•ë³€í™˜ ë‚´ìž¥ ë©”ì„œë“œ
+        myInt.ToString();       // intí˜• ë³€ìˆ˜ -> stringí˜• ë³€ìˆ˜ë¡œ ë³€í™˜
         string age = "30";
-        age.ToIntArray();       // string -> intÇü ¹è¿­·Î º¯È¯
-        int.Parse(age);         // string -> intÇüÀ¸·Î º¯È¯
-        print(int.MaxValue);    // intÀÇ ÃÖ´ë°ª
-        float.Parse(age);       // string -> floatÇüÀ¸·Î º¯È¯
-        double.Parse(age);      // string -> doubleÇüÀ¸·Î º¯È¯
-        bool.Parse(age);        // string -> boolÇüÀ¸·Î º¯È¯
+        age.ToIntArray();       // string -> intí˜• ë°°ì—´ë¡œ ë³€í™˜
+        int.Parse(age);         // string -> intí˜•ìœ¼ë¡œ ë³€í™˜
+        print(int.MaxValue);    // intì˜ ìµœëŒ€ê°’
+        float.Parse(age);       // string -> floatí˜•ìœ¼ë¡œ ë³€í™˜
+        double.Parse(age);      // string -> doubleí˜•ìœ¼ë¡œ ë³€í™˜
+        bool.Parse(age);        // string -> boolí˜•ìœ¼ë¡œ ë³€í™˜
     }
 }
